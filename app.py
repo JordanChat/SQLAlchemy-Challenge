@@ -1,5 +1,7 @@
+from flask import Flask
 import numpy as np
 import pandas as pd
+import datetime
 
 import sqlalchemy
 from sqlalchemy.ext.automap import automap_base
@@ -19,7 +21,7 @@ Station = base.classes.station
 
 session = Session(engine)
 
-app = Flash(__name__)
+app = Flask(__name__)
 
 @app.route("/")
 def welcome():
